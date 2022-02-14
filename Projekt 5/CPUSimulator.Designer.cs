@@ -5,6 +5,11 @@
         /// <summary>
         ///  Required designer variable.
         /// </summary>
+        Register ax = new Register();
+        Register bx = new Register();
+        Register cx = new Register();
+        Register dx = new Register();
+        Register im = new Register();
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
@@ -28,7 +33,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.doCommandButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -169,6 +174,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.instantModeLabel = new System.Windows.Forms.Label();
+            this.commandLabel = new System.Windows.Forms.Label();
+            this.commandComboBox = new System.Windows.Forms.ComboBox();
+            this.operand1ComboBox = new System.Windows.Forms.ComboBox();
+            this.operand2ComboBox = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.operatorLabel = new System.Windows.Forms.Label();
             this.axPanel.SuspendLayout();
             this.alPanel.SuspendLayout();
             this.ahPanel.SuspendLayout();
@@ -184,22 +195,24 @@
             this.immediatePanel.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // doCommandButton
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(1112, 100);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 55);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Wykonaj rozkaz";
-            this.button1.UseVisualStyleBackColor = true;
+            this.doCommandButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.doCommandButton.Location = new System.Drawing.Point(108, 139);
+            this.doCommandButton.Name = "doCommandButton";
+            this.doCommandButton.Size = new System.Drawing.Size(134, 55);
+            this.doCommandButton.TabIndex = 0;
+            this.doCommandButton.Text = "Wykonaj rozkaz";
+            this.doCommandButton.UseVisualStyleBackColor = true;
+            this.doCommandButton.Click += new System.EventHandler(this.doCommandButton_Click);
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(1252, 100);
+            this.button2.Location = new System.Drawing.Point(1190, 432);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(134, 55);
             this.button2.TabIndex = 1;
@@ -209,7 +222,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(1112, 177);
+            this.button3.Location = new System.Drawing.Point(292, 139);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(134, 55);
             this.button3.TabIndex = 2;
@@ -219,7 +232,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(1252, 39);
+            this.button4.Location = new System.Drawing.Point(1190, 512);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(134, 55);
             this.button4.TabIndex = 3;
@@ -229,7 +242,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(1252, 177);
+            this.button5.Location = new System.Drawing.Point(1278, 637);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(134, 55);
             this.button5.TabIndex = 4;
@@ -239,7 +252,7 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button6.Location = new System.Drawing.Point(1112, 39);
+            this.button6.Location = new System.Drawing.Point(1190, 365);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(134, 55);
             this.button6.TabIndex = 5;
@@ -1686,11 +1699,87 @@
             this.instantModeLabel.TabIndex = 0;
             this.instantModeLabel.Text = "Tryb natychmiastowy";
             // 
+            // commandLabel
+            // 
+            this.commandLabel.AutoSize = true;
+            this.commandLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.commandLabel.Location = new System.Drawing.Point(14, 15);
+            this.commandLabel.Name = "commandLabel";
+            this.commandLabel.Size = new System.Drawing.Size(60, 21);
+            this.commandLabel.TabIndex = 24;
+            this.commandLabel.Text = "Rozkaz";
+            // 
+            // commandComboBox
+            // 
+            this.commandComboBox.FormattingEnabled = true;
+            this.commandComboBox.Items.AddRange(new object[] {
+            "mov",
+            "add",
+            "sub"});
+            this.commandComboBox.Location = new System.Drawing.Point(76, 64);
+            this.commandComboBox.Name = "commandComboBox";
+            this.commandComboBox.Size = new System.Drawing.Size(102, 23);
+            this.commandComboBox.TabIndex = 27;
+            this.commandComboBox.SelectedIndexChanged += new System.EventHandler(this.commandComboBox_SelectedIndexChanged);
+            // 
+            // operand1ComboBox
+            // 
+            this.operand1ComboBox.FormattingEnabled = true;
+            this.operand1ComboBox.Items.AddRange(new object[] {
+            "AX",
+            "BX",
+            "CX",
+            "DX",
+            "Tryb natych."});
+            this.operand1ComboBox.Location = new System.Drawing.Point(216, 64);
+            this.operand1ComboBox.Name = "operand1ComboBox";
+            this.operand1ComboBox.Size = new System.Drawing.Size(102, 23);
+            this.operand1ComboBox.TabIndex = 28;
+            // 
+            // operand2ComboBox
+            // 
+            this.operand2ComboBox.FormattingEnabled = true;
+            this.operand2ComboBox.Items.AddRange(new object[] {
+            "AX",
+            "BX",
+            "CX",
+            "DX",
+            "Tryb natych."});
+            this.operand2ComboBox.Location = new System.Drawing.Point(356, 64);
+            this.operand2ComboBox.Name = "operand2ComboBox";
+            this.operand2ComboBox.Size = new System.Drawing.Size(102, 23);
+            this.operand2ComboBox.TabIndex = 29;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.operand2ComboBox);
+            this.panel1.Controls.Add(this.doCommandButton);
+            this.panel1.Controls.Add(this.operand1ComboBox);
+            this.panel1.Controls.Add(this.commandLabel);
+            this.panel1.Controls.Add(this.commandComboBox);
+            this.panel1.Controls.Add(this.operatorLabel);
+            this.panel1.Location = new System.Drawing.Point(563, 473);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(533, 214);
+            this.panel1.TabIndex = 30;
+            // 
+            // operatorLabel
+            // 
+            this.operatorLabel.AutoSize = true;
+            this.operatorLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.operatorLabel.Location = new System.Drawing.Point(324, 64);
+            this.operatorLabel.Name = "operatorLabel";
+            this.operatorLabel.Size = new System.Drawing.Size(0, 21);
+            this.operatorLabel.TabIndex = 24;
+            this.operatorLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // cpuSimulator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1424, 703);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.immediatePanel);
             this.Controls.Add(this.dxPanel);
             this.Controls.Add(this.bxPanel);
@@ -1699,9 +1788,7 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "cpuSimulator";
@@ -1728,13 +1815,15 @@
             this.immediatePanel.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Button button1;
+        private Button doCommandButton;
         private Button button2;
         private Button button3;
         private Button button4;
@@ -1875,5 +1964,11 @@
         private Label label9;
         private Label label10;
         private Label instantModeLabel;
+        private Label commandLabel;
+        private ComboBox commandComboBox;
+        private ComboBox operand1ComboBox;
+        private ComboBox operand2ComboBox;
+        private Panel panel1;
+        private Label operatorLabel;
     }
 }

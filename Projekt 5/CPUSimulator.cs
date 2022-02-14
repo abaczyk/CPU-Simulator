@@ -44,5 +44,12 @@ namespace Projekt_5
             dhTextBox.Text = dxButton15.Text + dxButton14.Text + dxButton13.Text + dxButton12.Text + dxButton11.Text + dxButton10.Text + dxButton9.Text + dxButton9.Text;
             dlTextBox.Text = dxButton7.Text + dxButton6.Text + dxButton5.Text + dxButton4.Text + dxButton3.Text + dxButton2.Text + dxButton1.Text + dxButton0.Text;
         }
+        private void immediateWriteButton_Click(object sender, EventArgs e)
+        {
+            immediateHTextBox.Text = immediateButton15.Text + immediateButton14.Text + immediateButton13.Text + immediateButton12.Text + immediateButton11.Text + immediateButton10.Text + immediateButton9.Text + immediateButton9.Text;
+            immediateLTextBox.Text = immediateButton7.Text + immediateButton6.Text + immediateButton5.Text + immediateButton4.Text + immediateButton3.Text + immediateButton2.Text + immediateButton1.Text + immediateButton0.Text;
+        }
+
+
     }
 }

@@ -61,8 +61,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
+            this.cxPanel = new System.Windows.Forms.Panel();
+            this.cxWriteButton = new System.Windows.Forms.Button();
             this.clLabel = new System.Windows.Forms.Label();
             this.chLabel = new System.Windows.Forms.Label();
             this.clTextBox = new System.Windows.Forms.TextBox();
@@ -88,8 +88,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button24 = new System.Windows.Forms.Button();
+            this.bxPanel = new System.Windows.Forms.Panel();
+            this.bxWriteButton = new System.Windows.Forms.Button();
             this.blLabel = new System.Windows.Forms.Label();
             this.bhLabel = new System.Windows.Forms.Label();
             this.blTextBox = new System.Windows.Forms.TextBox();
@@ -115,8 +115,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.bxLabel = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.button41 = new System.Windows.Forms.Button();
+            this.dxPanel = new System.Windows.Forms.Panel();
+            this.dxWriteButton = new System.Windows.Forms.Button();
             this.dlLabel = new System.Windows.Forms.Label();
             this.dhLabel = new System.Windows.Forms.Label();
             this.dlTextBox = new System.Windows.Forms.TextBox();
@@ -142,18 +142,48 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.immediatePanel = new System.Windows.Forms.Panel();
+            this.immediateWriteButton = new System.Windows.Forms.Button();
+            this.immediateLLabel = new System.Windows.Forms.Label();
+            this.immediateHLabel = new System.Windows.Forms.Label();
+            this.immediateLTextBox = new System.Windows.Forms.TextBox();
+            this.immediateHTextBox = new System.Windows.Forms.TextBox();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.immediateButton5 = new System.Windows.Forms.Button();
+            this.immediateButton7 = new System.Windows.Forms.Button();
+            this.immediateButton6 = new System.Windows.Forms.Button();
+            this.immediateButton4 = new System.Windows.Forms.Button();
+            this.immediateButton3 = new System.Windows.Forms.Button();
+            this.immediateButton0 = new System.Windows.Forms.Button();
+            this.immediateButton2 = new System.Windows.Forms.Button();
+            this.immediateButton1 = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.immediateButton15 = new System.Windows.Forms.Button();
+            this.immediateButton14 = new System.Windows.Forms.Button();
+            this.immediateButton13 = new System.Windows.Forms.Button();
+            this.immediateButton12 = new System.Windows.Forms.Button();
+            this.immediateButton11 = new System.Windows.Forms.Button();
+            this.immediateButton10 = new System.Windows.Forms.Button();
+            this.immediateButton9 = new System.Windows.Forms.Button();
+            this.immediateButton8 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.instantModeLabel = new System.Windows.Forms.Label();
             this.axPanel.SuspendLayout();
             this.alPanel.SuspendLayout();
             this.ahPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.cxPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.bxPanel.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.dxPanel.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.immediatePanel.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -504,33 +534,33 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Rejestr AX";
             // 
-            // panel1
+            // cxPanel
             // 
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.clLabel);
-            this.panel1.Controls.Add(this.chLabel);
-            this.panel1.Controls.Add(this.clTextBox);
-            this.panel1.Controls.Add(this.chTextBox);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Location = new System.Drawing.Point(12, 241);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(533, 213);
-            this.panel1.TabIndex = 9;
+            this.cxPanel.Controls.Add(this.cxWriteButton);
+            this.cxPanel.Controls.Add(this.clLabel);
+            this.cxPanel.Controls.Add(this.chLabel);
+            this.cxPanel.Controls.Add(this.clTextBox);
+            this.cxPanel.Controls.Add(this.chTextBox);
+            this.cxPanel.Controls.Add(this.panel2);
+            this.cxPanel.Controls.Add(this.panel3);
+            this.cxPanel.Controls.Add(this.label6);
+            this.cxPanel.Controls.Add(this.label7);
+            this.cxPanel.Controls.Add(this.label8);
+            this.cxPanel.Location = new System.Drawing.Point(12, 241);
+            this.cxPanel.Name = "cxPanel";
+            this.cxPanel.Size = new System.Drawing.Size(533, 213);
+            this.cxPanel.TabIndex = 9;
             // 
-            // button7
+            // cxWriteButton
             // 
-            this.button7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button7.Location = new System.Drawing.Point(237, 94);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(61, 31);
-            this.button7.TabIndex = 23;
-            this.button7.Text = "Wpisz";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.cxWriteButton_Click);
+            this.cxWriteButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cxWriteButton.Location = new System.Drawing.Point(237, 94);
+            this.cxWriteButton.Name = "cxWriteButton";
+            this.cxWriteButton.Size = new System.Drawing.Size(61, 31);
+            this.cxWriteButton.TabIndex = 23;
+            this.cxWriteButton.Text = "Wpisz";
+            this.cxWriteButton.UseVisualStyleBackColor = true;
+            this.cxWriteButton.Click += new System.EventHandler(this.cxWriteButton_Click);
             // 
             // clLabel
             // 
@@ -792,33 +822,33 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Rejestr CX";
             // 
-            // panel4
+            // bxPanel
             // 
-            this.panel4.Controls.Add(this.button24);
-            this.panel4.Controls.Add(this.blLabel);
-            this.panel4.Controls.Add(this.bhLabel);
-            this.panel4.Controls.Add(this.blTextBox);
-            this.panel4.Controls.Add(this.bhTextBox);
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Controls.Add(this.panel6);
-            this.panel4.Controls.Add(this.label11);
-            this.panel4.Controls.Add(this.label12);
-            this.panel4.Controls.Add(this.bxLabel);
-            this.panel4.Location = new System.Drawing.Point(563, 12);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(533, 213);
-            this.panel4.TabIndex = 24;
+            this.bxPanel.Controls.Add(this.bxWriteButton);
+            this.bxPanel.Controls.Add(this.blLabel);
+            this.bxPanel.Controls.Add(this.bhLabel);
+            this.bxPanel.Controls.Add(this.blTextBox);
+            this.bxPanel.Controls.Add(this.bhTextBox);
+            this.bxPanel.Controls.Add(this.panel5);
+            this.bxPanel.Controls.Add(this.panel6);
+            this.bxPanel.Controls.Add(this.label11);
+            this.bxPanel.Controls.Add(this.label12);
+            this.bxPanel.Controls.Add(this.bxLabel);
+            this.bxPanel.Location = new System.Drawing.Point(563, 12);
+            this.bxPanel.Name = "bxPanel";
+            this.bxPanel.Size = new System.Drawing.Size(533, 213);
+            this.bxPanel.TabIndex = 24;
             // 
-            // button24
+            // bxWriteButton
             // 
-            this.button24.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button24.Location = new System.Drawing.Point(237, 94);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(61, 31);
-            this.button24.TabIndex = 23;
-            this.button24.Text = "Wpisz";
-            this.button24.UseVisualStyleBackColor = true;
-            this.button24.Click += new System.EventHandler(this.bxWriteButton_Click);
+            this.bxWriteButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bxWriteButton.Location = new System.Drawing.Point(237, 94);
+            this.bxWriteButton.Name = "bxWriteButton";
+            this.bxWriteButton.Size = new System.Drawing.Size(61, 31);
+            this.bxWriteButton.TabIndex = 23;
+            this.bxWriteButton.Text = "Wpisz";
+            this.bxWriteButton.UseVisualStyleBackColor = true;
+            this.bxWriteButton.Click += new System.EventHandler(this.bxWriteButton_Click);
             // 
             // blLabel
             // 
@@ -1080,33 +1110,33 @@
             this.bxLabel.TabIndex = 0;
             this.bxLabel.Text = "Rejestr BX";
             // 
-            // panel7
+            // dxPanel
             // 
-            this.panel7.Controls.Add(this.button41);
-            this.panel7.Controls.Add(this.dlLabel);
-            this.panel7.Controls.Add(this.dhLabel);
-            this.panel7.Controls.Add(this.dlTextBox);
-            this.panel7.Controls.Add(this.dhTextBox);
-            this.panel7.Controls.Add(this.panel8);
-            this.panel7.Controls.Add(this.panel9);
-            this.panel7.Controls.Add(this.label16);
-            this.panel7.Controls.Add(this.label17);
-            this.panel7.Controls.Add(this.label18);
-            this.panel7.Location = new System.Drawing.Point(563, 242);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(533, 213);
-            this.panel7.TabIndex = 25;
+            this.dxPanel.Controls.Add(this.dxWriteButton);
+            this.dxPanel.Controls.Add(this.dlLabel);
+            this.dxPanel.Controls.Add(this.dhLabel);
+            this.dxPanel.Controls.Add(this.dlTextBox);
+            this.dxPanel.Controls.Add(this.dhTextBox);
+            this.dxPanel.Controls.Add(this.panel8);
+            this.dxPanel.Controls.Add(this.panel9);
+            this.dxPanel.Controls.Add(this.label16);
+            this.dxPanel.Controls.Add(this.label17);
+            this.dxPanel.Controls.Add(this.label18);
+            this.dxPanel.Location = new System.Drawing.Point(563, 242);
+            this.dxPanel.Name = "dxPanel";
+            this.dxPanel.Size = new System.Drawing.Size(533, 213);
+            this.dxPanel.TabIndex = 25;
             // 
-            // button41
+            // dxWriteButton
             // 
-            this.button41.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button41.Location = new System.Drawing.Point(237, 94);
-            this.button41.Name = "button41";
-            this.button41.Size = new System.Drawing.Size(61, 31);
-            this.button41.TabIndex = 23;
-            this.button41.Text = "Wpisz";
-            this.button41.UseVisualStyleBackColor = true;
-            this.button41.Click += new System.EventHandler(this.dxWriteButton_Click);
+            this.dxWriteButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dxWriteButton.Location = new System.Drawing.Point(237, 94);
+            this.dxWriteButton.Name = "dxWriteButton";
+            this.dxWriteButton.Size = new System.Drawing.Size(61, 31);
+            this.dxWriteButton.TabIndex = 23;
+            this.dxWriteButton.Text = "Wpisz";
+            this.dxWriteButton.UseVisualStyleBackColor = true;
+            this.dxWriteButton.Click += new System.EventHandler(this.dxWriteButton_Click);
             // 
             // dlLabel
             // 
@@ -1368,14 +1398,303 @@
             this.label18.TabIndex = 0;
             this.label18.Text = "Rejestr DX";
             // 
+            // immediatePanel
+            // 
+            this.immediatePanel.Controls.Add(this.immediateWriteButton);
+            this.immediatePanel.Controls.Add(this.immediateLLabel);
+            this.immediatePanel.Controls.Add(this.immediateHLabel);
+            this.immediatePanel.Controls.Add(this.immediateLTextBox);
+            this.immediatePanel.Controls.Add(this.immediateHTextBox);
+            this.immediatePanel.Controls.Add(this.panel11);
+            this.immediatePanel.Controls.Add(this.panel12);
+            this.immediatePanel.Controls.Add(this.label9);
+            this.immediatePanel.Controls.Add(this.label10);
+            this.immediatePanel.Controls.Add(this.instantModeLabel);
+            this.immediatePanel.Location = new System.Drawing.Point(12, 473);
+            this.immediatePanel.Name = "immediatePanel";
+            this.immediatePanel.Size = new System.Drawing.Size(533, 213);
+            this.immediatePanel.TabIndex = 26;
+            // 
+            // immediateWriteButton
+            // 
+            this.immediateWriteButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.immediateWriteButton.Location = new System.Drawing.Point(237, 94);
+            this.immediateWriteButton.Name = "immediateWriteButton";
+            this.immediateWriteButton.Size = new System.Drawing.Size(61, 31);
+            this.immediateWriteButton.TabIndex = 23;
+            this.immediateWriteButton.Text = "Wpisz";
+            this.immediateWriteButton.UseVisualStyleBackColor = true;
+            this.immediateWriteButton.Click += new System.EventHandler(this.immediateWriteButton_Click);
+            // 
+            // immediateLLabel
+            // 
+            this.immediateLLabel.AutoSize = true;
+            this.immediateLLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.immediateLLabel.Location = new System.Drawing.Point(299, 140);
+            this.immediateLLabel.Name = "immediateLLabel";
+            this.immediateLLabel.Size = new System.Drawing.Size(34, 21);
+            this.immediateLLabel.TabIndex = 22;
+            this.immediateLLabel.Text = "TnL";
+            // 
+            // immediateHLabel
+            // 
+            this.immediateHLabel.AutoSize = true;
+            this.immediateHLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.immediateHLabel.Location = new System.Drawing.Point(204, 140);
+            this.immediateHLabel.Name = "immediateHLabel";
+            this.immediateHLabel.Size = new System.Drawing.Size(37, 21);
+            this.immediateHLabel.TabIndex = 21;
+            this.immediateHLabel.Text = "TnH";
+            // 
+            // immediateLTextBox
+            // 
+            this.immediateLTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.immediateLTextBox.Location = new System.Drawing.Point(268, 164);
+            this.immediateLTextBox.Multiline = true;
+            this.immediateLTextBox.Name = "immediateLTextBox";
+            this.immediateLTextBox.ReadOnly = true;
+            this.immediateLTextBox.Size = new System.Drawing.Size(88, 30);
+            this.immediateLTextBox.TabIndex = 20;
+            // 
+            // immediateHTextBox
+            // 
+            this.immediateHTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.immediateHTextBox.Location = new System.Drawing.Point(178, 164);
+            this.immediateHTextBox.Multiline = true;
+            this.immediateHTextBox.Name = "immediateHTextBox";
+            this.immediateHTextBox.ReadOnly = true;
+            this.immediateHTextBox.Size = new System.Drawing.Size(88, 30);
+            this.immediateHTextBox.TabIndex = 19;
+            // 
+            // panel11
+            // 
+            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel11.Controls.Add(this.immediateButton5);
+            this.panel11.Controls.Add(this.immediateButton7);
+            this.panel11.Controls.Add(this.immediateButton6);
+            this.panel11.Controls.Add(this.immediateButton4);
+            this.panel11.Controls.Add(this.immediateButton3);
+            this.panel11.Controls.Add(this.immediateButton0);
+            this.panel11.Controls.Add(this.immediateButton2);
+            this.panel11.Controls.Add(this.immediateButton1);
+            this.panel11.Location = new System.Drawing.Point(268, 39);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(258, 32);
+            this.panel11.TabIndex = 12;
+            // 
+            // immediateButton5
+            // 
+            this.immediateButton5.Location = new System.Drawing.Point(67, 3);
+            this.immediateButton5.Name = "immediateButton5";
+            this.immediateButton5.Size = new System.Drawing.Size(26, 26);
+            this.immediateButton5.TabIndex = 17;
+            this.immediateButton5.Text = "0";
+            this.immediateButton5.UseVisualStyleBackColor = true;
+            this.immediateButton5.Click += new System.EventHandler(this.registerButton_Click);
+            // 
+            // immediateButton7
+            // 
+            this.immediateButton7.Location = new System.Drawing.Point(3, 3);
+            this.immediateButton7.Name = "immediateButton7";
+            this.immediateButton7.Size = new System.Drawing.Size(26, 26);
+            this.immediateButton7.TabIndex = 8;
+            this.immediateButton7.Text = "0";
+            this.immediateButton7.UseVisualStyleBackColor = true;
+            this.immediateButton7.Click += new System.EventHandler(this.registerButton_Click);
+            // 
+            // immediateButton6
+            // 
+            this.immediateButton6.Location = new System.Drawing.Point(35, 3);
+            this.immediateButton6.Name = "immediateButton6";
+            this.immediateButton6.Size = new System.Drawing.Size(26, 26);
+            this.immediateButton6.TabIndex = 9;
+            this.immediateButton6.Text = "0";
+            this.immediateButton6.UseVisualStyleBackColor = true;
+            this.immediateButton6.Click += new System.EventHandler(this.registerButton_Click);
+            // 
+            // immediateButton4
+            // 
+            this.immediateButton4.Location = new System.Drawing.Point(99, 3);
+            this.immediateButton4.Name = "immediateButton4";
+            this.immediateButton4.Size = new System.Drawing.Size(26, 26);
+            this.immediateButton4.TabIndex = 12;
+            this.immediateButton4.Text = "0";
+            this.immediateButton4.UseVisualStyleBackColor = true;
+            this.immediateButton4.Click += new System.EventHandler(this.registerButton_Click);
+            // 
+            // immediateButton3
+            // 
+            this.immediateButton3.Location = new System.Drawing.Point(131, 3);
+            this.immediateButton3.Name = "immediateButton3";
+            this.immediateButton3.Size = new System.Drawing.Size(26, 26);
+            this.immediateButton3.TabIndex = 13;
+            this.immediateButton3.Text = "0";
+            this.immediateButton3.UseVisualStyleBackColor = true;
+            this.immediateButton3.Click += new System.EventHandler(this.registerButton_Click);
+            // 
+            // immediateButton0
+            // 
+            this.immediateButton0.Location = new System.Drawing.Point(227, 3);
+            this.immediateButton0.Name = "immediateButton0";
+            this.immediateButton0.Size = new System.Drawing.Size(26, 26);
+            this.immediateButton0.TabIndex = 16;
+            this.immediateButton0.Text = "0";
+            this.immediateButton0.UseVisualStyleBackColor = true;
+            this.immediateButton0.Click += new System.EventHandler(this.registerButton_Click);
+            // 
+            // immediateButton2
+            // 
+            this.immediateButton2.Location = new System.Drawing.Point(163, 3);
+            this.immediateButton2.Name = "immediateButton2";
+            this.immediateButton2.Size = new System.Drawing.Size(26, 26);
+            this.immediateButton2.TabIndex = 14;
+            this.immediateButton2.Text = "0";
+            this.immediateButton2.UseVisualStyleBackColor = true;
+            this.immediateButton2.Click += new System.EventHandler(this.registerButton_Click);
+            // 
+            // immediateButton1
+            // 
+            this.immediateButton1.Location = new System.Drawing.Point(195, 3);
+            this.immediateButton1.Name = "immediateButton1";
+            this.immediateButton1.Size = new System.Drawing.Size(26, 26);
+            this.immediateButton1.TabIndex = 15;
+            this.immediateButton1.Text = "0";
+            this.immediateButton1.UseVisualStyleBackColor = true;
+            this.immediateButton1.Click += new System.EventHandler(this.registerButton_Click);
+            // 
+            // panel12
+            // 
+            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel12.Controls.Add(this.immediateButton15);
+            this.panel12.Controls.Add(this.immediateButton14);
+            this.panel12.Controls.Add(this.immediateButton13);
+            this.panel12.Controls.Add(this.immediateButton12);
+            this.panel12.Controls.Add(this.immediateButton11);
+            this.panel12.Controls.Add(this.immediateButton10);
+            this.panel12.Controls.Add(this.immediateButton9);
+            this.panel12.Controls.Add(this.immediateButton8);
+            this.panel12.Location = new System.Drawing.Point(8, 39);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(258, 32);
+            this.panel12.TabIndex = 9;
+            // 
+            // immediateButton15
+            // 
+            this.immediateButton15.Location = new System.Drawing.Point(3, 3);
+            this.immediateButton15.Name = "immediateButton15";
+            this.immediateButton15.Size = new System.Drawing.Size(26, 26);
+            this.immediateButton15.TabIndex = 1;
+            this.immediateButton15.Text = "0";
+            this.immediateButton15.UseVisualStyleBackColor = true;
+            this.immediateButton15.Click += new System.EventHandler(this.registerButton_Click);
+            // 
+            // immediateButton14
+            // 
+            this.immediateButton14.Location = new System.Drawing.Point(35, 3);
+            this.immediateButton14.Name = "immediateButton14";
+            this.immediateButton14.Size = new System.Drawing.Size(26, 26);
+            this.immediateButton14.TabIndex = 2;
+            this.immediateButton14.Text = "0";
+            this.immediateButton14.UseVisualStyleBackColor = true;
+            this.immediateButton14.Click += new System.EventHandler(this.registerButton_Click);
+            // 
+            // immediateButton13
+            // 
+            this.immediateButton13.Location = new System.Drawing.Point(67, 3);
+            this.immediateButton13.Name = "immediateButton13";
+            this.immediateButton13.Size = new System.Drawing.Size(26, 26);
+            this.immediateButton13.TabIndex = 3;
+            this.immediateButton13.Text = "0";
+            this.immediateButton13.UseVisualStyleBackColor = true;
+            this.immediateButton13.Click += new System.EventHandler(this.registerButton_Click);
+            // 
+            // immediateButton12
+            // 
+            this.immediateButton12.Location = new System.Drawing.Point(99, 3);
+            this.immediateButton12.Name = "immediateButton12";
+            this.immediateButton12.Size = new System.Drawing.Size(26, 26);
+            this.immediateButton12.TabIndex = 4;
+            this.immediateButton12.Text = "0";
+            this.immediateButton12.UseVisualStyleBackColor = true;
+            this.immediateButton12.Click += new System.EventHandler(this.registerButton_Click);
+            // 
+            // immediateButton11
+            // 
+            this.immediateButton11.Location = new System.Drawing.Point(131, 3);
+            this.immediateButton11.Name = "immediateButton11";
+            this.immediateButton11.Size = new System.Drawing.Size(26, 26);
+            this.immediateButton11.TabIndex = 11;
+            this.immediateButton11.Text = "0";
+            this.immediateButton11.UseVisualStyleBackColor = true;
+            this.immediateButton11.Click += new System.EventHandler(this.registerButton_Click);
+            // 
+            // immediateButton10
+            // 
+            this.immediateButton10.Location = new System.Drawing.Point(163, 3);
+            this.immediateButton10.Name = "immediateButton10";
+            this.immediateButton10.Size = new System.Drawing.Size(26, 26);
+            this.immediateButton10.TabIndex = 5;
+            this.immediateButton10.Text = "0";
+            this.immediateButton10.UseVisualStyleBackColor = true;
+            this.immediateButton10.Click += new System.EventHandler(this.registerButton_Click);
+            // 
+            // immediateButton9
+            // 
+            this.immediateButton9.Location = new System.Drawing.Point(195, 3);
+            this.immediateButton9.Name = "immediateButton9";
+            this.immediateButton9.Size = new System.Drawing.Size(26, 26);
+            this.immediateButton9.TabIndex = 6;
+            this.immediateButton9.Text = "0";
+            this.immediateButton9.UseVisualStyleBackColor = true;
+            this.immediateButton9.Click += new System.EventHandler(this.registerButton_Click);
+            // 
+            // immediateButton8
+            // 
+            this.immediateButton8.Location = new System.Drawing.Point(228, 3);
+            this.immediateButton8.Name = "immediateButton8";
+            this.immediateButton8.Size = new System.Drawing.Size(26, 26);
+            this.immediateButton8.TabIndex = 7;
+            this.immediateButton8.Text = "0";
+            this.immediateButton8.UseVisualStyleBackColor = true;
+            this.immediateButton8.Click += new System.EventHandler(this.registerButton_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(494, 74);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 15);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "0-bit";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(14, 74);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(38, 15);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "15-bit";
+            // 
+            // instantModeLabel
+            // 
+            this.instantModeLabel.AutoSize = true;
+            this.instantModeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.instantModeLabel.Location = new System.Drawing.Point(8, 15);
+            this.instantModeLabel.Name = "instantModeLabel";
+            this.instantModeLabel.Size = new System.Drawing.Size(164, 21);
+            this.instantModeLabel.TabIndex = 0;
+            this.instantModeLabel.Text = "Tryb natychmiastowy";
+            // 
             // cpuSimulator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1424, 467);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1424, 703);
+            this.Controls.Add(this.immediatePanel);
+            this.Controls.Add(this.dxPanel);
+            this.Controls.Add(this.bxPanel);
+            this.Controls.Add(this.cxPanel);
             this.Controls.Add(this.axPanel);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -1393,18 +1712,22 @@
             this.axPanel.PerformLayout();
             this.alPanel.ResumeLayout(false);
             this.ahPanel.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.cxPanel.ResumeLayout(false);
+            this.cxPanel.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.bxPanel.ResumeLayout(false);
+            this.bxPanel.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.dxPanel.ResumeLayout(false);
+            this.dxPanel.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
+            this.immediatePanel.ResumeLayout(false);
+            this.immediatePanel.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1444,8 +1767,8 @@
         private Button axWriteButton;
         private Label alLabel;
         private Label ahLabel;
-        private Panel panel1;
-        private Button button7;
+        private Panel cxPanel;
+        private Button cxWriteButton;
         private Label clLabel;
         private Label chLabel;
         private TextBox clTextBox;
@@ -1471,8 +1794,8 @@
         private Label label6;
         private Label label7;
         private Label label8;
-        private Panel panel4;
-        private Button button24;
+        private Panel bxPanel;
+        private Button bxWriteButton;
         private Label blLabel;
         private Label bhLabel;
         private TextBox blTextBox;
@@ -1498,8 +1821,8 @@
         private Label label11;
         private Label label12;
         private Label bxLabel;
-        private Panel panel7;
-        private Button button41;
+        private Panel dxPanel;
+        private Button dxWriteButton;
         private Label dlLabel;
         private Label dhLabel;
         private TextBox dlTextBox;
@@ -1525,5 +1848,32 @@
         private Label label16;
         private Label label17;
         private Label label18;
+        private Panel immediatePanel;
+        private Button immediateWriteButton;
+        private Label immediateLLabel;
+        private Label immediateHLabel;
+        private TextBox immediateLTextBox;
+        private TextBox immediateHTextBox;
+        private Panel panel11;
+        private Button immediateButton5;
+        private Button immediateButton7;
+        private Button immediateButton6;
+        private Button immediateButton4;
+        private Button immediateButton3;
+        private Button immediateButton0;
+        private Button immediateButton2;
+        private Button immediateButton1;
+        private Panel panel12;
+        private Button immediateButton15;
+        private Button immediateButton14;
+        private Button immediateButton13;
+        private Button immediateButton12;
+        private Button immediateButton11;
+        private Button immediateButton10;
+        private Button immediateButton9;
+        private Button immediateButton8;
+        private Label label9;
+        private Label label10;
+        private Label instantModeLabel;
     }
 }

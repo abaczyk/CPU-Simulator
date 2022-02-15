@@ -1720,6 +1720,7 @@
             this.commandComboBox.Name = "commandComboBox";
             this.commandComboBox.Size = new System.Drawing.Size(102, 23);
             this.commandComboBox.TabIndex = 27;
+            this.commandComboBox.Text = "mov";
             this.commandComboBox.SelectedIndexChanged += new System.EventHandler(this.commandComboBox_SelectedIndexChanged);
             // 
             // operand1ComboBox
@@ -1735,6 +1736,7 @@
             this.operand1ComboBox.Name = "operand1ComboBox";
             this.operand1ComboBox.Size = new System.Drawing.Size(102, 23);
             this.operand1ComboBox.TabIndex = 28;
+            this.operand1ComboBox.Text = "AX";
             // 
             // operand2ComboBox
             // 
@@ -1749,6 +1751,7 @@
             this.operand2ComboBox.Name = "operand2ComboBox";
             this.operand2ComboBox.Size = new System.Drawing.Size(102, 23);
             this.operand2ComboBox.TabIndex = 29;
+            this.operand2ComboBox.Text = "BX";
             // 
             // panel1
             // 

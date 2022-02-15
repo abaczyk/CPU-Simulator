@@ -114,21 +114,46 @@ namespace Projekt_5
                 {
                     getTextBoxAfterCommand(immediateHTextBox, immediateLTextBox);
                 }
+            }
+            else if (commandComboBox.SelectedItem.ToString() == "add")
+            {
+                Register.add(getRegisterNameFromComboBox(operand1ComboBox), getRegisterNameFromComboBox(operand2ComboBox));
+
+                if (operand1ComboBox.SelectedItem.ToString() == "AX")
+                {
+                    getTextBoxAfterCommand(ahTextBox, alTextBox);
+                }
+                else if (operand1ComboBox.SelectedItem.ToString() == "BX")
+                {
+                    getTextBoxAfterCommand(bhTextBox, blTextBox);
+                }
+                else if (operand1ComboBox.SelectedItem.ToString() == "CX")
+                {
+                    getTextBoxAfterCommand(chTextBox, clTextBox);
+                }
+                else if (operand1ComboBox.SelectedItem.ToString() == "DX")
+                {
+                    getTextBoxAfterCommand(dhTextBox, dlTextBox);
+                }
+                else if (operand1ComboBox.SelectedItem.ToString() == "Tryb natych.")
+                {
+                    getTextBoxAfterCommand(immediateHTextBox, immediateLTextBox);
+                }
+            }
+            else if (commandComboBox.SelectedItem.ToString() == "sub")
+            {
 
             }
-            //else if (commandComboBox.SelectedIndex == 1) //add
-
-            //else if (commandComboBox.SelectedIndex == 2) //sub
 
         }
 
         private void commandComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (commandComboBox.SelectedIndex == 0) //mov
+            if (commandComboBox.SelectedItem.ToString() == "mov") 
                 operatorLabel.Text = "<=";
-            else if (commandComboBox.SelectedIndex == 1) //add
+            else if (commandComboBox.SelectedItem.ToString() == "add") 
                 operatorLabel.Text = "+";
-            else if (commandComboBox.SelectedIndex == 2) //sub
+            else if (commandComboBox.SelectedItem.ToString() == "sub") 
                 operatorLabel.Text = "-";
         }
 
@@ -137,7 +162,7 @@ namespace Projekt_5
             if (comboBox.SelectedItem.ToString() == "AX")
                 return ax;
             else if (comboBox.SelectedItem.ToString() == "BX")
-                return ax;
+                return bx;
             else if (comboBox.SelectedItem.ToString() == "CX")
                 return cx;
             else if (comboBox.SelectedItem.ToString() == "DX")
@@ -146,144 +171,5 @@ namespace Projekt_5
                 return im;
             else return null;
         }
-
-        //private void mov(ComboBox comboBox1, ComboBox comboBox2)
-        //{
-        //    if (comboBox2.SelectedIndex == 0) //AX
-        //    {
-        //        if (comboBox1.SelectedIndex == 0) //AX
-        //        {
-        //            return;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 1) //BX
-        //        {
-        //            bhTextBox.Text = ahTextBox.Text;
-        //            blTextBox.Text = alTextBox.Text;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 2) //CX
-        //        {
-        //            chTextBox.Text = ahTextBox.Text;
-        //            clTextBox.Text = alTextBox.Text;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 3) //DX
-        //        {
-        //            dhTextBox.Text = ahTextBox.Text;
-        //            dlTextBox.Text = alTextBox.Text;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 4) //tryb natychmiastowy
-        //        {
-        //            immediateHTextBox.Text = ahTextBox.Text;
-        //            immediateLTextBox.Text = alTextBox.Text;
-        //        }
-        //    }
-        //    else if (comboBox2.SelectedIndex == 1) //BX
-        //    {
-        //        if (comboBox1.SelectedIndex == 0) //AX
-        //        {
-        //            ahTextBox.Text = bhTextBox.Text;
-        //            alTextBox.Text = blTextBox.Text;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 1) //BX
-        //        {
-        //            return;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 2) //CX
-        //        {
-        //            chTextBox.Text = bhTextBox.Text;
-        //            clTextBox.Text = blTextBox.Text;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 3) //DX
-        //        {
-        //            dhTextBox.Text = bhTextBox.Text;
-        //            dlTextBox.Text = blTextBox.Text;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 4) //tryb natychmiastowy
-        //        {
-        //            immediateHTextBox.Text = bhTextBox.Text;
-        //            immediateLTextBox.Text = blTextBox.Text;
-        //        }
-        //    }
-        //    else if (comboBox2.SelectedIndex == 2) //CX
-        //    {
-        //        if (comboBox1.SelectedIndex == 0) //AX
-        //        {
-        //            ahTextBox.Text = chTextBox.Text;
-        //            alTextBox.Text = clTextBox.Text;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 1) //BX
-        //        {
-        //            bhTextBox.Text = chTextBox.Text;
-        //            blTextBox.Text = clTextBox.Text;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 2) //CX
-        //        {
-        //            return;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 3) //DX
-        //        {
-        //            dhTextBox.Text = chTextBox.Text;
-        //            dlTextBox.Text = clTextBox.Text;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 4) //tryb natychmiastowy
-        //        {
-        //            immediateHTextBox.Text = chTextBox.Text;
-        //            immediateLTextBox.Text = clTextBox.Text;
-        //        }
-        //    }
-        //    else if (comboBox2.SelectedIndex == 3) //DX
-        //    {
-        //        if (comboBox1.SelectedIndex == 0) //AX
-        //        {
-        //            ahTextBox.Text = dhTextBox.Text;
-        //            alTextBox.Text = dlTextBox.Text;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 1) //BX
-        //        {
-        //            bhTextBox.Text = dhTextBox.Text;
-        //            blTextBox.Text = dlTextBox.Text;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 2) //CX
-        //        {
-        //            chTextBox.Text = dhTextBox.Text;
-        //            clTextBox.Text = dlTextBox.Text;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 3) //DX
-        //        {
-        //            return;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 4) //tryb natychmiastowy
-        //        {
-        //            immediateHTextBox.Text = dhTextBox.Text;
-        //            immediateLTextBox.Text = dlTextBox.Text;
-        //        }
-        //    }
-        //    else if (comboBox2.SelectedIndex == 4) //tryb natychmiastowy
-        //    {
-        //        if (comboBox1.SelectedIndex == 0) //AX
-        //        {
-        //            ahTextBox.Text = immediateHTextBox.Text;
-        //            alTextBox.Text = immediateLTextBox.Text;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 1) //BX
-        //        {
-        //            bhTextBox.Text = immediateHTextBox.Text;
-        //            blTextBox.Text = immediateLTextBox.Text;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 2) //CX
-        //        {
-        //            chTextBox.Text = immediateHTextBox.Text;
-        //            clTextBox.Text = immediateLTextBox.Text;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 3) //DX
-        //        {
-        //            dhTextBox.Text = immediateHTextBox.Text;
-        //            dlTextBox.Text = immediateLTextBox.Text;
-        //        }
-        //        else if (comboBox1.SelectedIndex == 4) //tryb natychmiastowy
-        //        {
-        //            return;
-        //        }
-        //    }
-        //}
     }
 }

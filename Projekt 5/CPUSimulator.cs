@@ -23,8 +23,6 @@ namespace Projekt_5
                 registerButton.Text = "0";
                 registerButton.Font = new Font(this.Font, FontStyle.Regular);
             }
-
-
         }
 
         private void getRegisterTable(Register register, TextBox highTextBox, TextBox lowTextBox)
@@ -90,7 +88,7 @@ namespace Projekt_5
         }
         private void doCommandButton_Click(object sender, EventArgs e)
         {
-            if (commandComboBox.SelectedIndex == 0) //mov
+            if (commandComboBox.SelectedItem.ToString() == "mov") 
             {
                 Register.mov(getRegisterNameFromComboBox(operand1ComboBox), getRegisterNameFromComboBox(operand2ComboBox));
 
@@ -144,7 +142,7 @@ namespace Projekt_5
             {
 
             }
-
+            cfLabel.Text = "CF = " + Register.cf.ToString();
         }
 
         private void commandComboBox_SelectedIndexChanged(object sender, EventArgs e)

@@ -180,6 +180,7 @@
             this.operand2ComboBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.operatorLabel = new System.Windows.Forms.Label();
+            this.cfLabel = new System.Windows.Forms.Label();
             this.axPanel.SuspendLayout();
             this.alPanel.SuspendLayout();
             this.ahPanel.SuspendLayout();
@@ -1773,15 +1774,27 @@
             this.operatorLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.operatorLabel.Location = new System.Drawing.Point(324, 64);
             this.operatorLabel.Name = "operatorLabel";
-            this.operatorLabel.Size = new System.Drawing.Size(0, 21);
+            this.operatorLabel.Size = new System.Drawing.Size(32, 21);
             this.operatorLabel.TabIndex = 24;
+            this.operatorLabel.Text = "<=";
             this.operatorLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // cfLabel
+            // 
+            this.cfLabel.AutoSize = true;
+            this.cfLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cfLabel.Location = new System.Drawing.Point(1190, 612);
+            this.cfLabel.Name = "cfLabel";
+            this.cfLabel.Size = new System.Drawing.Size(43, 21);
+            this.cfLabel.TabIndex = 31;
+            this.cfLabel.Text = "CF =";
             // 
             // cpuSimulator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1424, 703);
+            this.Controls.Add(this.cfLabel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.immediatePanel);
             this.Controls.Add(this.dxPanel);
@@ -1821,6 +1834,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1973,5 +1987,6 @@
         private ComboBox operand2ComboBox;
         private Panel panel1;
         private Label operatorLabel;
+        private Label cfLabel;
     }
 }

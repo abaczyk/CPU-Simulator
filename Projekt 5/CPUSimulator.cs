@@ -79,7 +79,7 @@ namespace Projekt_5
             getRegisterTable(im, immediateHTextBox, immediateLTextBox);
         }
 
-        private void getTextBoxAfterCommand(TextBox high, TextBox low)
+        private void getLowAndHighTextBox(TextBox high, TextBox low)
         {
             high.Text = String.Empty;
             low.Text = String.Empty;
@@ -93,80 +93,61 @@ namespace Projekt_5
         {
             if (commandComboBox.SelectedItem.ToString() == "mov") 
             {
-                Register.mov(getRegisterNameFromComboBox(operand1ComboBox), getRegisterNameFromComboBox(operand2ComboBox));
-
-                if(operand1ComboBox.SelectedItem.ToString() == "AX")
-                {
-                    getTextBoxAfterCommand(ahTextBox, alTextBox);
-                }
-                else if (operand1ComboBox.SelectedItem.ToString() == "BX")
-                {
-                    getTextBoxAfterCommand(bhTextBox, blTextBox);
-                }
-                else if (operand1ComboBox.SelectedItem.ToString() == "CX")
-                {
-                    getTextBoxAfterCommand(chTextBox, clTextBox);
-                }
-                else if (operand1ComboBox.SelectedItem.ToString() == "DX")
-                {
-                    getTextBoxAfterCommand(dhTextBox, dlTextBox);
-                }
+                Register.mov(getRegisterNameFromComboBox(operand1ComboBox), getRegisterNameFromComboBox(operand2ComboBox)); 
             }
             else if (commandComboBox.SelectedItem.ToString() == "add")
             {
                 Register.add(getRegisterNameFromComboBox(operand1ComboBox), getRegisterNameFromComboBox(operand2ComboBox));
-
-                if (operand1ComboBox.SelectedItem.ToString() == "AX")
-                {
-                    getTextBoxAfterCommand(ahTextBox, alTextBox);
-                }
-                else if (operand1ComboBox.SelectedItem.ToString() == "BX")
-                {
-                    getTextBoxAfterCommand(bhTextBox, blTextBox);
-                }
-                else if (operand1ComboBox.SelectedItem.ToString() == "CX")
-                {
-                    getTextBoxAfterCommand(chTextBox, clTextBox);
-                }
-                else if (operand1ComboBox.SelectedItem.ToString() == "DX")
-                {
-                    getTextBoxAfterCommand(dhTextBox, dlTextBox);
-                }
-                else if (operand1ComboBox.SelectedItem.ToString() == "Tryb natych.")
-                {
-                    getTextBoxAfterCommand(immediateHTextBox, immediateLTextBox);
-                }
             }
             else if (commandComboBox.SelectedItem.ToString() == "sub")
             {
                 Register.sub(getRegisterNameFromComboBox(operand1ComboBox), getRegisterNameFromComboBox(operand2ComboBox));
-
-                if (operand1ComboBox.SelectedItem.ToString() == "AX")
-                {
-                    getTextBoxAfterCommand(ahTextBox, alTextBox);
-                }
-                else if (operand1ComboBox.SelectedItem.ToString() == "BX")
-                {
-                    getTextBoxAfterCommand(bhTextBox, blTextBox);
-                }
-                else if (operand1ComboBox.SelectedItem.ToString() == "CX")
-                {
-                    getTextBoxAfterCommand(chTextBox, clTextBox);
-                }
-                else if (operand1ComboBox.SelectedItem.ToString() == "DX")
-                {
-                    getTextBoxAfterCommand(dhTextBox, dlTextBox);
-                }
-                else if (operand1ComboBox.SelectedItem.ToString() == "Tryb natych.")
-                {
-                    getTextBoxAfterCommand(immediateHTextBox, immediateLTextBox);
-                }
             }
+            getTextBoxAfterCommand();
             cfLabel.Text = "CF = " + Register.cf.ToString();
             if (cfLabel.Text == "CF = 1")
                 cfLabel.ForeColor = Color.Red;
             else
                 cfLabel.ForeColor = DefaultBackColor;
+        }
+
+        private void getTextBoxAfterCommand()
+        {
+            if (operand1ComboBox.SelectedItem.ToString() == "AX")
+            {
+                getLowAndHighTextBox(ahTextBox, alTextBox);
+            }
+            else if (operand1ComboBox.SelectedItem.ToString() == "BX")
+            {
+                getLowAndHighTextBox(bhTextBox, blTextBox);
+            }
+            else if (operand1ComboBox.SelectedItem.ToString() == "CX")
+            {
+                getLowAndHighTextBox(chTextBox, clTextBox);
+            }
+            else if (operand1ComboBox.SelectedItem.ToString() == "DX")
+            {
+                getLowAndHighTextBox(dhTextBox, dlTextBox);
+            }
+        }
+        private void getTextBoxAfterCommand(Register register)
+        {
+            if (register == ax)
+            {
+                getLowAndHighTextBox(ahTextBox, alTextBox);
+            }
+            else if (register == bx)
+            {
+                getLowAndHighTextBox(bhTextBox, blTextBox);
+            }
+            else if (register == cx)
+            {
+                getLowAndHighTextBox(chTextBox, clTextBox);
+            }
+            else
+            {
+                getLowAndHighTextBox(dhTextBox, dlTextBox);
+            }
         }
 
         private void commandComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -199,45 +180,51 @@ namespace Projekt_5
         }
         private void executeProgram_Click(object sender, EventArgs e)
         {
+            
             List<string> commands = new List<string>();
             List<string> operand1 = new List<string>();
             List<string> operand2 = new List<string>();
             string[] parts;
-            string[] temp = commandsTextBox.Text.Split(Environment.NewLine);
-            string [] line = temp.Where(val => val != "").ToArray();
+            string[] line = commandsTextBox.Text.Split(Environment.NewLine).Where(val => val != "").ToArray();
             for (int i = 0; i < line.Length; i++)
             {
                 parts = line[i].Split(" ");
                 commands.Add(parts[1]);
+                if (commands[i].Contains("sub"))
+                {
+                    operand1.Add(parts[3]);
+                    operand2.Add(parts[2]);
+                }
+                else
                 operand1.Add(parts[2]);
                 operand2.Add(parts[3]);
 
-                if (commands[i].Contains("mov"))
-                {
+                if (commands[i].ToLower().Contains("mov"))
                     Register.mov(getRegisterFromParts(operand1[i]), getRegisterFromParts(operand2[i]));
-                }
-                else if (commands[1].Contains("add"))
-                {
+
+                else if (commands[i].ToLower().Contains("add"))
                     Register.add(getRegisterFromParts(operand1[i]), getRegisterFromParts(operand2[i]));
-                }
                 else
-                {
                     Register.sub(getRegisterFromParts(operand1[i]), getRegisterFromParts(operand2[i]));
-                }
+                getTextBoxAfterCommand(getRegisterFromParts(operand1[i]));
             }
         }
 
         private Register getRegisterFromParts(string str)
         {
             if (str.Contains("AX"))
+            {
                 return ax;
+            }
             else if (str.Contains("BX"))
+            {
                 return bx;
-            else if(str.Contains("CX"))
+            }
+            else if (str.Contains("CX"))
                 return cx;
             else if (str.Contains("DX"))
                 return dx;
-            else 
+            else
                 return im;
         }
 
@@ -275,8 +262,24 @@ namespace Projekt_5
         private void addCommandToListButton_Click(object sender, EventArgs e)
         {
             lineNumber++;
-            commandsTextBox.Text += lineNumber + " " + commandComboBox.SelectedItem.ToString() + " " + operand1ComboBox.SelectedItem.ToString() + ", " + operand2ComboBox.SelectedItem.ToString() + Environment.NewLine;
+            if(commandComboBox.SelectedItem.ToString() == "sub")
+                commandsTextBox.Text += lineNumber + ". " + commandComboBox.SelectedItem.ToString() + " " + operand2ComboBox.SelectedItem.ToString() + ", " + operand1ComboBox.SelectedItem.ToString() + Environment.NewLine;
+            else
+                commandsTextBox.Text += lineNumber + ". " + commandComboBox.SelectedItem.ToString() + " " + operand1ComboBox.SelectedItem.ToString() + ", " + operand2ComboBox.SelectedItem.ToString() + Environment.NewLine;
+        }
 
+        private void cleanRegisters_Click(object sender, EventArgs e)
+        {
+            ax.resetRegister();
+            bx.resetRegister();
+            cx.resetRegister();
+            dx.resetRegister();
+            im.resetRegister();
+        }
+
+        private void cleanCommandList_Click(object sender, EventArgs e)
+        {
+            commandsTextBox.Text = string.Empty;
         }
     }
 }

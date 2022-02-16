@@ -186,6 +186,8 @@
             this.commandsLabel = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.cleanRegisters = new System.Windows.Forms.Button();
+            this.cleanCommandList = new System.Windows.Forms.Button();
             this.axPanel.SuspendLayout();
             this.alPanel.SuspendLayout();
             this.ahPanel.SuspendLayout();
@@ -218,7 +220,7 @@
             // executeProgram
             // 
             this.executeProgram.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.executeProgram.Location = new System.Drawing.Point(1198, 409);
+            this.executeProgram.Location = new System.Drawing.Point(1265, 311);
             this.executeProgram.Name = "executeProgram";
             this.executeProgram.Size = new System.Drawing.Size(134, 55);
             this.executeProgram.TabIndex = 1;
@@ -240,7 +242,7 @@
             // executeStepButton
             // 
             this.executeStepButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.executeStepButton.Location = new System.Drawing.Point(1198, 311);
+            this.executeStepButton.Location = new System.Drawing.Point(1125, 312);
             this.executeStepButton.Name = "executeStepButton";
             this.executeStepButton.Size = new System.Drawing.Size(134, 55);
             this.executeStepButton.TabIndex = 3;
@@ -251,7 +253,7 @@
             // saveProgram
             // 
             this.saveProgram.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.saveProgram.Location = new System.Drawing.Point(1198, 596);
+            this.saveProgram.Location = new System.Drawing.Point(1265, 399);
             this.saveProgram.Name = "saveProgram";
             this.saveProgram.Size = new System.Drawing.Size(134, 55);
             this.saveProgram.TabIndex = 4;
@@ -262,7 +264,7 @@
             // readProgram
             // 
             this.readProgram.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.readProgram.Location = new System.Drawing.Point(1198, 504);
+            this.readProgram.Location = new System.Drawing.Point(1125, 399);
             this.readProgram.Name = "readProgram";
             this.readProgram.Size = new System.Drawing.Size(134, 55);
             this.readProgram.TabIndex = 5;
@@ -1820,11 +1822,35 @@
             this.commandsLabel.TabIndex = 33;
             this.commandsLabel.Text = "Lista rozkazów";
             // 
+            // cleanRegisters
+            // 
+            this.cleanRegisters.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cleanRegisters.Location = new System.Drawing.Point(1125, 487);
+            this.cleanRegisters.Name = "cleanRegisters";
+            this.cleanRegisters.Size = new System.Drawing.Size(134, 55);
+            this.cleanRegisters.TabIndex = 34;
+            this.cleanRegisters.Text = "Wyczyść rejestry";
+            this.cleanRegisters.UseVisualStyleBackColor = true;
+            this.cleanRegisters.Click += new System.EventHandler(this.cleanRegisters_Click);
+            // 
+            // cleanCommandList
+            // 
+            this.cleanCommandList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cleanCommandList.Location = new System.Drawing.Point(1265, 487);
+            this.cleanCommandList.Name = "cleanCommandList";
+            this.cleanCommandList.Size = new System.Drawing.Size(134, 55);
+            this.cleanCommandList.TabIndex = 35;
+            this.cleanCommandList.Text = "Wyczyść listę rozkazów";
+            this.cleanCommandList.UseVisualStyleBackColor = true;
+            this.cleanCommandList.Click += new System.EventHandler(this.cleanCommandList_Click);
+            // 
             // cpuSimulator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1424, 703);
+            this.Controls.Add(this.cleanCommandList);
+            this.Controls.Add(this.cleanRegisters);
             this.Controls.Add(this.commandsLabel);
             this.Controls.Add(this.commandsTextBox);
             this.Controls.Add(this.panel1);
@@ -2024,5 +2050,7 @@
         private Label commandsLabel;
         private OpenFileDialog openFileDialog;
         private SaveFileDialog saveFileDialog;
+        private Button cleanRegisters;
+        private Button cleanCommandList;
     }
 }

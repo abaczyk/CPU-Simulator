@@ -67,11 +67,11 @@ namespace Projekt_5
             //TODO - dodac flage CF jezeli odejmujemy liczbe mniejsza od wiekszej
         }
 
-        private static void resetRegister(Register register)
+        public void resetRegister()
         {
-            for (int i = 0; i < register.wholeRegister.Length; i++)
-                register.wholeRegister[i] = 0;
-            register.getLowAndHighFromWholeRegister();
+            for (int i = 0; i < wholeRegister.Length; i++)
+                wholeRegister[i] = 0;
+            getLowAndHighFromWholeRegister();
         }
 
     }

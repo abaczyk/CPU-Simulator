@@ -31,7 +31,8 @@ namespace Projekt_5
 
         public static void mov(Register register1, Register register2) //kopiuje z register2 do register1
         {
-
+            register1.wholeRegister = register2.wholeRegister;
+            register1.getLowAndHighFromWholeRegister();
         }
         public static void add(Register register1, Register register2) //sumuje register1 i register2, wynik przechowuje w register1 
         {

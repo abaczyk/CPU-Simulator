@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 
@@ -187,15 +189,56 @@ namespace Projekt_5
                 return cx;
             else if (comboBox.SelectedItem.ToString() == "DX")
                 return dx;
-            else if (comboBox.SelectedItem.ToString() == "Tryb natych.")
+            else 
                 return im;
-            else return null;
         }
-
 
         private void doStepButton_Click(object sender, EventArgs e)
         {
             
+        }
+        private void executeProgram_Click(object sender, EventArgs e)
+        {
+            List<string> commands = new List<string>();
+            List<string> operand1 = new List<string>();
+            List<string> operand2 = new List<string>();
+            string[] parts;
+            string[] temp = commandsTextBox.Text.Split(Environment.NewLine);
+            string [] line = temp.Where(val => val != "").ToArray();
+            for (int i = 0; i < line.Length; i++)
+            {
+                parts = line[i].Split(" ");
+                commands.Add(parts[1]);
+                operand1.Add(parts[2]);
+                operand2.Add(parts[3]);
+
+                if (commands[i].Contains("mov"))
+                {
+                    Register.mov(getRegisterFromParts(operand1[i]), getRegisterFromParts(operand2[i]));
+                }
+                else if (commands[1].Contains("add"))
+                {
+                    Register.add(getRegisterFromParts(operand1[i]), getRegisterFromParts(operand2[i]));
+                }
+                else
+                {
+                    Register.sub(getRegisterFromParts(operand1[i]), getRegisterFromParts(operand2[i]));
+                }
+            }
+        }
+
+        private Register getRegisterFromParts(string str)
+        {
+            if (str.Contains("AX"))
+                return ax;
+            else if (str.Contains("BX"))
+                return bx;
+            else if(str.Contains("CX"))
+                return cx;
+            else if (str.Contains("DX"))
+                return dx;
+            else 
+                return im;
         }
 
         private void readProgram_Click(object sender, EventArgs e)
@@ -209,7 +252,6 @@ namespace Projekt_5
                 foreach (string line in lines)
                 {
                     commandsTextBox.Text += line + Environment.NewLine;
-
                 }
             }
             catch (Exception ex)
@@ -217,10 +259,7 @@ namespace Projekt_5
                 MessageBox.Show(ex.Message);
             }
         }
-        private void executeProgram_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         private void saveProgram_Click(object sender, EventArgs e)
         {
             this.saveFileDialog.Filter = "Plik tekstowy|*.txt";
@@ -236,7 +275,7 @@ namespace Projekt_5
         private void addCommandToListButton_Click(object sender, EventArgs e)
         {
             lineNumber++;
-            commandsTextBox.Text += lineNumber + ". " + commandComboBox.SelectedItem.ToString() + " " + operand1ComboBox.SelectedItem.ToString() + ", " + operand2ComboBox.SelectedItem.ToString() + Environment.NewLine;
+            commandsTextBox.Text += lineNumber + " " + commandComboBox.SelectedItem.ToString() + " " + operand1ComboBox.SelectedItem.ToString() + ", " + operand2ComboBox.SelectedItem.ToString() + Environment.NewLine;
 
         }
     }

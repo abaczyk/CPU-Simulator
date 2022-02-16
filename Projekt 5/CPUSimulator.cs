@@ -1,4 +1,5 @@
 using System.Text;
+using System.Windows.Forms;
 
 namespace Projekt_5
 {
@@ -164,7 +165,6 @@ namespace Projekt_5
                 cfLabel.ForeColor = Color.Red;
             else
                 cfLabel.ForeColor = DefaultBackColor;
-            addCommandToCommandsList();
         }
 
         private void commandComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -192,11 +192,6 @@ namespace Projekt_5
             else return null;
         }
 
-        private void addCommandToCommandsList()
-        {
-            lineNumber++;
-            commandsTextBox.Text += lineNumber + ". " + commandComboBox.SelectedItem.ToString() + " " + operand1ComboBox.SelectedItem.ToString() + ", " + operand2ComboBox.SelectedItem.ToString() + Environment.NewLine;
-        }
 
         private void doStepButton_Click(object sender, EventArgs e)
         {
@@ -205,10 +200,12 @@ namespace Projekt_5
 
         private void readProgram_Click(object sender, EventArgs e)
         {
+            this.openFileDialog.Filter = "Plik tekstowy|*.txt";
             this.openFileDialog.ShowDialog();
             try
             {
                 string[] lines = System.IO.File.ReadAllLines(this.openFileDialog.FileName);
+                commandsTextBox.Text = String.Empty;
                 foreach (string line in lines)
                 {
                     commandsTextBox.Text += line + Environment.NewLine;
@@ -220,14 +217,26 @@ namespace Projekt_5
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void saveProgram_Click(object sender, EventArgs e)
+        private void executeProgram_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void executeProgram_Click(object sender, EventArgs e)
+        private void saveProgram_Click(object sender, EventArgs e)
         {
+            this.saveFileDialog.Filter = "Plik tekstowy|*.txt";
+            this.saveFileDialog.ShowDialog();
+            if(saveFileDialog.FileName != "") {
+                using (StreamWriter streamWriter = new StreamWriter(this.saveFileDialog.FileName))
+                {
+                    streamWriter.Write(commandsTextBox.Text);
+                }
+            }
+        }
+
+        private void addCommandToListButton_Click(object sender, EventArgs e)
+        {
+            lineNumber++;
+            commandsTextBox.Text += lineNumber + ". " + commandComboBox.SelectedItem.ToString() + " " + operand1ComboBox.SelectedItem.ToString() + ", " + operand2ComboBox.SelectedItem.ToString() + Environment.NewLine;
 
         }
     }

@@ -220,7 +220,7 @@
             // executeProgram
             // 
             this.executeProgram.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.executeProgram.Location = new System.Drawing.Point(1265, 311);
+            this.executeProgram.Location = new System.Drawing.Point(1267, 376);
             this.executeProgram.Name = "executeProgram";
             this.executeProgram.Size = new System.Drawing.Size(134, 55);
             this.executeProgram.TabIndex = 1;
@@ -242,7 +242,7 @@
             // executeStepButton
             // 
             this.executeStepButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.executeStepButton.Location = new System.Drawing.Point(1125, 312);
+            this.executeStepButton.Location = new System.Drawing.Point(1127, 377);
             this.executeStepButton.Name = "executeStepButton";
             this.executeStepButton.Size = new System.Drawing.Size(134, 55);
             this.executeStepButton.TabIndex = 3;
@@ -253,7 +253,7 @@
             // saveProgram
             // 
             this.saveProgram.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.saveProgram.Location = new System.Drawing.Point(1265, 399);
+            this.saveProgram.Location = new System.Drawing.Point(1267, 464);
             this.saveProgram.Name = "saveProgram";
             this.saveProgram.Size = new System.Drawing.Size(134, 55);
             this.saveProgram.TabIndex = 4;
@@ -264,7 +264,7 @@
             // readProgram
             // 
             this.readProgram.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.readProgram.Location = new System.Drawing.Point(1125, 399);
+            this.readProgram.Location = new System.Drawing.Point(1127, 464);
             this.readProgram.Name = "readProgram";
             this.readProgram.Size = new System.Drawing.Size(134, 55);
             this.readProgram.TabIndex = 5;
@@ -274,6 +274,7 @@
             // 
             // axPanel
             // 
+            this.axPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.axPanel.Controls.Add(this.axWriteButton);
             this.axPanel.Controls.Add(this.alLabel);
             this.axPanel.Controls.Add(this.ahLabel);
@@ -562,6 +563,7 @@
             // 
             // cxPanel
             // 
+            this.cxPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.cxPanel.Controls.Add(this.cxWriteButton);
             this.cxPanel.Controls.Add(this.clLabel);
             this.cxPanel.Controls.Add(this.chLabel);
@@ -850,6 +852,7 @@
             // 
             // bxPanel
             // 
+            this.bxPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.bxPanel.Controls.Add(this.bxWriteButton);
             this.bxPanel.Controls.Add(this.blLabel);
             this.bxPanel.Controls.Add(this.bhLabel);
@@ -1138,6 +1141,7 @@
             // 
             // dxPanel
             // 
+            this.dxPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dxPanel.Controls.Add(this.dxWriteButton);
             this.dxPanel.Controls.Add(this.dlLabel);
             this.dxPanel.Controls.Add(this.dhLabel);
@@ -1426,6 +1430,7 @@
             // 
             // immediatePanel
             // 
+            this.immediatePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.immediatePanel.Controls.Add(this.immediateWriteButton);
             this.immediatePanel.Controls.Add(this.immediateLLabel);
             this.immediatePanel.Controls.Add(this.immediateHLabel);
@@ -1767,6 +1772,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.operand2ComboBox);
             this.panel1.Controls.Add(this.cfLabel);
@@ -1804,7 +1810,7 @@
             // commandsTextBox
             // 
             this.commandsTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.commandsTextBox.Location = new System.Drawing.Point(1144, 55);
+            this.commandsTextBox.Location = new System.Drawing.Point(1146, 120);
             this.commandsTextBox.Multiline = true;
             this.commandsTextBox.Name = "commandsTextBox";
             this.commandsTextBox.ReadOnly = true;
@@ -1816,7 +1822,7 @@
             // 
             this.commandsLabel.AutoSize = true;
             this.commandsLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.commandsLabel.Location = new System.Drawing.Point(1144, 24);
+            this.commandsLabel.Location = new System.Drawing.Point(1146, 89);
             this.commandsLabel.Name = "commandsLabel";
             this.commandsLabel.Size = new System.Drawing.Size(115, 21);
             this.commandsLabel.TabIndex = 33;
@@ -1825,7 +1831,7 @@
             // cleanRegisters
             // 
             this.cleanRegisters.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cleanRegisters.Location = new System.Drawing.Point(1125, 487);
+            this.cleanRegisters.Location = new System.Drawing.Point(1127, 552);
             this.cleanRegisters.Name = "cleanRegisters";
             this.cleanRegisters.Size = new System.Drawing.Size(134, 55);
             this.cleanRegisters.TabIndex = 34;
@@ -1836,7 +1842,7 @@
             // cleanCommandList
             // 
             this.cleanCommandList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cleanCommandList.Location = new System.Drawing.Point(1265, 487);
+            this.cleanCommandList.Location = new System.Drawing.Point(1267, 552);
             this.cleanCommandList.Name = "cleanCommandList";
             this.cleanCommandList.Size = new System.Drawing.Size(134, 55);
             this.cleanCommandList.TabIndex = 35;

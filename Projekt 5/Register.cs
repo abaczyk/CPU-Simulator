@@ -50,23 +50,20 @@ namespace Projekt_5
         }
         public static void sub(Register register1, Register register2) //odejmuje register2 od register1, wynik przechowuje w register1
         {
-            int[] carry = new int[register1.wholeRegister.Length];
             int[] temp = new int[register1.wholeRegister.Length];
             for (int i = 0; i < register1.wholeRegister.Length; i++)
             {
-                if(register2.wholeRegister[i] > register1.wholeRegister[i]) //0 - 1
+                if(register2.wholeRegister[i] > register1.wholeRegister[i]) //odejmujemy 0 - 1
                 {
                     if(i+1 < register1.wholeRegister.Length)
                         register1.wholeRegister[i + 1] -= 1;
                     register1.wholeRegister[i] += 2;
                 }
                 temp[i] = (register1.wholeRegister[i] - register2.wholeRegister[i]) % 2;
-                
             }
             register1.wholeRegister = temp;
             register1.getLowAndHighFromWholeRegister();
-            if (carry[register1.wholeRegister.Length - 1] == 1)
-                cf = 1;
+            //TODO - dodac flage CF jezeli odejmujemy liczbe mniejsza od wiekszej
         }
 
         private static void resetRegister(Register register)
@@ -75,5 +72,6 @@ namespace Projekt_5
                 register.wholeRegister[i] = 0;
             register.getLowAndHighFromWholeRegister();
         }
+
     }
 }

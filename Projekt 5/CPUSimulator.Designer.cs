@@ -10,6 +10,7 @@
         Register cx = new Register();
         Register dx = new Register();
         Register im = new Register();
+        int lineNumber = 0;
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
@@ -34,11 +35,11 @@
         private void InitializeComponent()
         {
             this.doCommandButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.executeProgram = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.executeStepButton = new System.Windows.Forms.Button();
+            this.saveProgram = new System.Windows.Forms.Button();
+            this.readProgram = new System.Windows.Forms.Button();
             this.axPanel = new System.Windows.Forms.Panel();
             this.axWriteButton = new System.Windows.Forms.Button();
             this.alLabel = new System.Windows.Forms.Label();
@@ -179,8 +180,12 @@
             this.operand1ComboBox = new System.Windows.Forms.ComboBox();
             this.operand2ComboBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.operatorLabel = new System.Windows.Forms.Label();
             this.cfLabel = new System.Windows.Forms.Label();
+            this.operatorLabel = new System.Windows.Forms.Label();
+            this.commandsTextBox = new System.Windows.Forms.TextBox();
+            this.commandsLabel = new System.Windows.Forms.Label();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.axPanel.SuspendLayout();
             this.alPanel.SuspendLayout();
             this.ahPanel.SuspendLayout();
@@ -202,7 +207,7 @@
             // doCommandButton
             // 
             this.doCommandButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.doCommandButton.Location = new System.Drawing.Point(108, 139);
+            this.doCommandButton.Location = new System.Drawing.Point(108, 123);
             this.doCommandButton.Name = "doCommandButton";
             this.doCommandButton.Size = new System.Drawing.Size(134, 55);
             this.doCommandButton.TabIndex = 0;
@@ -210,55 +215,59 @@
             this.doCommandButton.UseVisualStyleBackColor = true;
             this.doCommandButton.Click += new System.EventHandler(this.doCommandButton_Click);
             // 
-            // button2
+            // executeProgram
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(1190, 432);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 55);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Wykonaj program";
-            this.button2.UseVisualStyleBackColor = true;
+            this.executeProgram.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.executeProgram.Location = new System.Drawing.Point(1198, 409);
+            this.executeProgram.Name = "executeProgram";
+            this.executeProgram.Size = new System.Drawing.Size(134, 55);
+            this.executeProgram.TabIndex = 1;
+            this.executeProgram.Text = "Wykonaj program";
+            this.executeProgram.UseVisualStyleBackColor = true;
+            this.executeProgram.Click += new System.EventHandler(this.executeProgram_Click);
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(292, 139);
+            this.button3.Location = new System.Drawing.Point(292, 123);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(134, 55);
             this.button3.TabIndex = 2;
             this.button3.Text = "Zapisz rozkaz \r\nw programie";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // executeStepButton
             // 
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(1190, 512);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(134, 55);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Wykonaj krok";
-            this.button4.UseVisualStyleBackColor = true;
+            this.executeStepButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.executeStepButton.Location = new System.Drawing.Point(1198, 311);
+            this.executeStepButton.Name = "executeStepButton";
+            this.executeStepButton.Size = new System.Drawing.Size(134, 55);
+            this.executeStepButton.TabIndex = 3;
+            this.executeStepButton.Text = "Wykonaj krok";
+            this.executeStepButton.UseVisualStyleBackColor = true;
+            this.executeStepButton.Click += new System.EventHandler(this.doStepButton_Click);
             // 
-            // button5
+            // saveProgram
             // 
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(1278, 637);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(134, 55);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Zapisz program";
-            this.button5.UseVisualStyleBackColor = true;
+            this.saveProgram.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.saveProgram.Location = new System.Drawing.Point(1198, 596);
+            this.saveProgram.Name = "saveProgram";
+            this.saveProgram.Size = new System.Drawing.Size(134, 55);
+            this.saveProgram.TabIndex = 4;
+            this.saveProgram.Text = "Zapisz program";
+            this.saveProgram.UseVisualStyleBackColor = true;
+            this.saveProgram.Click += new System.EventHandler(this.saveProgram_Click);
             // 
-            // button6
+            // readProgram
             // 
-            this.button6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button6.Location = new System.Drawing.Point(1190, 365);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(134, 55);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Wczytaj program";
-            this.button6.UseVisualStyleBackColor = true;
+            this.readProgram.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.readProgram.Location = new System.Drawing.Point(1198, 504);
+            this.readProgram.Name = "readProgram";
+            this.readProgram.Size = new System.Drawing.Size(134, 55);
+            this.readProgram.TabIndex = 5;
+            this.readProgram.Text = "Wczytaj program";
+            this.readProgram.UseVisualStyleBackColor = true;
+            this.readProgram.Click += new System.EventHandler(this.readProgram_Click);
             // 
             // axPanel
             // 
@@ -1696,9 +1705,9 @@
             this.instantModeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.instantModeLabel.Location = new System.Drawing.Point(8, 15);
             this.instantModeLabel.Name = "instantModeLabel";
-            this.instantModeLabel.Size = new System.Drawing.Size(164, 21);
+            this.instantModeLabel.Size = new System.Drawing.Size(294, 21);
             this.instantModeLabel.TabIndex = 0;
-            this.instantModeLabel.Text = "Tryb natychmiastowy";
+            this.instantModeLabel.Text = "Argument do trybu natychmiastowego";
             // 
             // commandLabel
             // 
@@ -1731,8 +1740,7 @@
             "AX",
             "BX",
             "CX",
-            "DX",
-            "Tryb natych."});
+            "DX"});
             this.operand1ComboBox.Location = new System.Drawing.Point(216, 64);
             this.operand1ComboBox.Name = "operand1ComboBox";
             this.operand1ComboBox.Size = new System.Drawing.Size(102, 23);
@@ -1758,6 +1766,7 @@
             // 
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.operand2ComboBox);
+            this.panel1.Controls.Add(this.cfLabel);
             this.panel1.Controls.Add(this.doCommandButton);
             this.panel1.Controls.Add(this.operand1ComboBox);
             this.panel1.Controls.Add(this.commandLabel);
@@ -1767,6 +1776,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(533, 214);
             this.panel1.TabIndex = 30;
+            // 
+            // cfLabel
+            // 
+            this.cfLabel.AutoSize = true;
+            this.cfLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cfLabel.Location = new System.Drawing.Point(464, 15);
+            this.cfLabel.Name = "cfLabel";
+            this.cfLabel.Size = new System.Drawing.Size(56, 21);
+            this.cfLabel.TabIndex = 31;
+            this.cfLabel.Text = "CF = 0";
             // 
             // operatorLabel
             // 
@@ -1779,32 +1798,44 @@
             this.operatorLabel.Text = "<=";
             this.operatorLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // cfLabel
+            // commandsTextBox
             // 
-            this.cfLabel.AutoSize = true;
-            this.cfLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cfLabel.Location = new System.Drawing.Point(1190, 612);
-            this.cfLabel.Name = "cfLabel";
-            this.cfLabel.Size = new System.Drawing.Size(56, 21);
-            this.cfLabel.TabIndex = 31;
-            this.cfLabel.Text = "CF = 0";
+            this.commandsTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.commandsTextBox.Location = new System.Drawing.Point(1144, 55);
+            this.commandsTextBox.Multiline = true;
+            this.commandsTextBox.Name = "commandsTextBox";
+            this.commandsTextBox.ReadOnly = true;
+            this.commandsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.commandsTextBox.Size = new System.Drawing.Size(231, 227);
+            this.commandsTextBox.TabIndex = 32;
+            // 
+            // commandsLabel
+            // 
+            this.commandsLabel.AutoSize = true;
+            this.commandsLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.commandsLabel.Location = new System.Drawing.Point(1144, 24);
+            this.commandsLabel.Name = "commandsLabel";
+            this.commandsLabel.Size = new System.Drawing.Size(115, 21);
+            this.commandsLabel.TabIndex = 33;
+            this.commandsLabel.Text = "Lista rozkazów";
             // 
             // cpuSimulator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1424, 703);
-            this.Controls.Add(this.cfLabel);
+            this.Controls.Add(this.commandsLabel);
+            this.Controls.Add(this.commandsTextBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.immediatePanel);
             this.Controls.Add(this.dxPanel);
             this.Controls.Add(this.bxPanel);
             this.Controls.Add(this.cxPanel);
+            this.Controls.Add(this.saveProgram);
+            this.Controls.Add(this.readProgram);
+            this.Controls.Add(this.executeProgram);
             this.Controls.Add(this.axPanel);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.executeStepButton);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "cpuSimulator";
@@ -1841,11 +1872,11 @@
         #endregion
 
         private Button doCommandButton;
-        private Button button2;
+        private Button executeProgram;
         private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
+        private Button executeStepButton;
+        private Button saveProgram;
+        private Button readProgram;
         private Panel axPanel;
         private Label label3;
         private Label label2;
@@ -1988,5 +2019,9 @@
         private Panel panel1;
         private Label operatorLabel;
         private Label cfLabel;
+        private TextBox commandsTextBox;
+        private Label commandsLabel;
+        private OpenFileDialog openFileDialog;
+        private SaveFileDialog saveFileDialog;
     }
 }

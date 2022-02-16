@@ -108,10 +108,6 @@ namespace Projekt_5
                 {
                     getTextBoxAfterCommand(dhTextBox, dlTextBox);
                 }
-                else if (operand1ComboBox.SelectedItem.ToString() == "Tryb natych.")
-                {
-                    getTextBoxAfterCommand(immediateHTextBox, immediateLTextBox);
-                }
             }
             else if (commandComboBox.SelectedItem.ToString() == "add")
             {
@@ -164,6 +160,11 @@ namespace Projekt_5
                 }
             }
             cfLabel.Text = "CF = " + Register.cf.ToString();
+            if (cfLabel.Text == "CF = 1")
+                cfLabel.ForeColor = Color.Red;
+            else
+                cfLabel.ForeColor = DefaultBackColor;
+            addCommandToCommandsList();
         }
 
         private void commandComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -189,6 +190,45 @@ namespace Projekt_5
             else if (comboBox.SelectedItem.ToString() == "Tryb natych.")
                 return im;
             else return null;
+        }
+
+        private void addCommandToCommandsList()
+        {
+            lineNumber++;
+            commandsTextBox.Text += lineNumber + ". " + commandComboBox.SelectedItem.ToString() + " " + operand1ComboBox.SelectedItem.ToString() + ", " + operand2ComboBox.SelectedItem.ToString() + Environment.NewLine;
+        }
+
+        private void doStepButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void readProgram_Click(object sender, EventArgs e)
+        {
+            this.openFileDialog.ShowDialog();
+            try
+            {
+                string[] lines = System.IO.File.ReadAllLines(this.openFileDialog.FileName);
+                foreach (string line in lines)
+                {
+                    commandsTextBox.Text += line + Environment.NewLine;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void saveProgram_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void executeProgram_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

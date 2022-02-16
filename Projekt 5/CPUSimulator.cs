@@ -140,7 +140,28 @@ namespace Projekt_5
             }
             else if (commandComboBox.SelectedItem.ToString() == "sub")
             {
+                Register.sub(getRegisterNameFromComboBox(operand1ComboBox), getRegisterNameFromComboBox(operand2ComboBox));
 
+                if (operand1ComboBox.SelectedItem.ToString() == "AX")
+                {
+                    getTextBoxAfterCommand(ahTextBox, alTextBox);
+                }
+                else if (operand1ComboBox.SelectedItem.ToString() == "BX")
+                {
+                    getTextBoxAfterCommand(bhTextBox, blTextBox);
+                }
+                else if (operand1ComboBox.SelectedItem.ToString() == "CX")
+                {
+                    getTextBoxAfterCommand(chTextBox, clTextBox);
+                }
+                else if (operand1ComboBox.SelectedItem.ToString() == "DX")
+                {
+                    getTextBoxAfterCommand(dhTextBox, dlTextBox);
+                }
+                else if (operand1ComboBox.SelectedItem.ToString() == "Tryb natych.")
+                {
+                    getTextBoxAfterCommand(immediateHTextBox, immediateLTextBox);
+                }
             }
             cfLabel.Text = "CF = " + Register.cf.ToString();
         }

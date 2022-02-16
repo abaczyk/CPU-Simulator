@@ -1785,9 +1785,9 @@
             this.cfLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cfLabel.Location = new System.Drawing.Point(1190, 612);
             this.cfLabel.Name = "cfLabel";
-            this.cfLabel.Size = new System.Drawing.Size(43, 21);
+            this.cfLabel.Size = new System.Drawing.Size(56, 21);
             this.cfLabel.TabIndex = 31;
-            this.cfLabel.Text = "CF =";
+            this.cfLabel.Text = "CF = 0";
             // 
             // cpuSimulator
             // 

@@ -151,21 +151,23 @@ namespace Projekt_5
 
         private void doStepButton_Click(object sender, EventArgs e)
         {
-            string commands = null;
-            string operand1 = null;
-            string operand2 = null;
+            string commands = string.Empty;
+            string operand1 = string.Empty;
+            string operand2 = string.Empty;
             string[] parts;
             string[] line = commandsTextBox.Text.Split(Environment.NewLine).Where(val => val != "").ToArray();
                 parts = line[currentLineNumber].Split(" ");
-                commands= parts[1];
-                if (commands.Contains("sub"))
-                {
-                    operand1 = parts[3];
-                    operand2 = parts[2];
-                }
-                else
-                    operand1 = parts[2];
+                commands = parts[1];
+            if (commands.Contains("sub"))
+            {
+                operand1 = parts[3];
+                operand2 = parts[2];
+            }
+            else
+            {
+                operand1 = parts[2];
                 operand2 = parts[3];
+            }
 
                 if (commands.ToLower().Contains("mov"))
                     Register.mov(getRegisterFromParts(operand1), getRegisterFromParts(operand2));

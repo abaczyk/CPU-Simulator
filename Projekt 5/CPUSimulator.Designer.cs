@@ -333,24 +333,26 @@
             // alTextBox
             // 
             this.alTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.alTextBox.Location = new System.Drawing.Point(306, 219);
+            this.alTextBox.Location = new System.Drawing.Point(310, 219);
             this.alTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.alTextBox.Multiline = true;
             this.alTextBox.Name = "alTextBox";
             this.alTextBox.ReadOnly = true;
-            this.alTextBox.Size = new System.Drawing.Size(100, 39);
+            this.alTextBox.Size = new System.Drawing.Size(117, 39);
             this.alTextBox.TabIndex = 20;
+            this.alTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ahTextBox
             // 
             this.ahTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ahTextBox.Location = new System.Drawing.Point(203, 219);
+            this.ahTextBox.Location = new System.Drawing.Point(184, 219);
             this.ahTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ahTextBox.Multiline = true;
             this.ahTextBox.Name = "ahTextBox";
             this.ahTextBox.ReadOnly = true;
-            this.ahTextBox.Size = new System.Drawing.Size(100, 39);
+            this.ahTextBox.Size = new System.Drawing.Size(117, 39);
             this.ahTextBox.TabIndex = 19;
+            this.ahTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // alPanel
             // 
@@ -644,24 +646,26 @@
             // clTextBox
             // 
             this.clTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.clTextBox.Location = new System.Drawing.Point(306, 219);
+            this.clTextBox.Location = new System.Drawing.Point(310, 221);
             this.clTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.clTextBox.Multiline = true;
             this.clTextBox.Name = "clTextBox";
             this.clTextBox.ReadOnly = true;
-            this.clTextBox.Size = new System.Drawing.Size(100, 39);
+            this.clTextBox.Size = new System.Drawing.Size(117, 39);
             this.clTextBox.TabIndex = 20;
+            this.clTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // chTextBox
             // 
             this.chTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chTextBox.Location = new System.Drawing.Point(203, 219);
+            this.chTextBox.Location = new System.Drawing.Point(184, 221);
             this.chTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chTextBox.Multiline = true;
             this.chTextBox.Name = "chTextBox";
             this.chTextBox.ReadOnly = true;
-            this.chTextBox.Size = new System.Drawing.Size(100, 39);
+            this.chTextBox.Size = new System.Drawing.Size(117, 39);
             this.chTextBox.TabIndex = 19;
+            this.chTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel2
             // 
@@ -955,24 +959,26 @@
             // blTextBox
             // 
             this.blTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.blTextBox.Location = new System.Drawing.Point(306, 219);
+            this.blTextBox.Location = new System.Drawing.Point(310, 219);
             this.blTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.blTextBox.Multiline = true;
             this.blTextBox.Name = "blTextBox";
             this.blTextBox.ReadOnly = true;
-            this.blTextBox.Size = new System.Drawing.Size(100, 39);
+            this.blTextBox.Size = new System.Drawing.Size(117, 39);
             this.blTextBox.TabIndex = 20;
+            this.blTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bhTextBox
             // 
             this.bhTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bhTextBox.Location = new System.Drawing.Point(203, 219);
+            this.bhTextBox.Location = new System.Drawing.Point(184, 219);
             this.bhTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bhTextBox.Multiline = true;
             this.bhTextBox.Name = "bhTextBox";
             this.bhTextBox.ReadOnly = true;
-            this.bhTextBox.Size = new System.Drawing.Size(100, 39);
+            this.bhTextBox.Size = new System.Drawing.Size(117, 39);
             this.bhTextBox.TabIndex = 19;
+            this.bhTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel5
             // 
@@ -1266,24 +1272,26 @@
             // dlTextBox
             // 
             this.dlTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dlTextBox.Location = new System.Drawing.Point(306, 219);
+            this.dlTextBox.Location = new System.Drawing.Point(310, 219);
             this.dlTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dlTextBox.Multiline = true;
             this.dlTextBox.Name = "dlTextBox";
             this.dlTextBox.ReadOnly = true;
-            this.dlTextBox.Size = new System.Drawing.Size(100, 39);
+            this.dlTextBox.Size = new System.Drawing.Size(117, 39);
             this.dlTextBox.TabIndex = 20;
+            this.dlTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dhTextBox
             // 
             this.dhTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dhTextBox.Location = new System.Drawing.Point(203, 219);
+            this.dhTextBox.Location = new System.Drawing.Point(184, 219);
             this.dhTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dhTextBox.Multiline = true;
             this.dhTextBox.Name = "dhTextBox";
             this.dhTextBox.ReadOnly = true;
-            this.dhTextBox.Size = new System.Drawing.Size(100, 39);
+            this.dhTextBox.Size = new System.Drawing.Size(117, 39);
             this.dhTextBox.TabIndex = 19;
+            this.dhTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel8
             // 
@@ -1577,24 +1585,26 @@
             // immediateLTextBox
             // 
             this.immediateLTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.immediateLTextBox.Location = new System.Drawing.Point(306, 219);
+            this.immediateLTextBox.Location = new System.Drawing.Point(310, 219);
             this.immediateLTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.immediateLTextBox.Multiline = true;
             this.immediateLTextBox.Name = "immediateLTextBox";
             this.immediateLTextBox.ReadOnly = true;
-            this.immediateLTextBox.Size = new System.Drawing.Size(100, 39);
+            this.immediateLTextBox.Size = new System.Drawing.Size(117, 39);
             this.immediateLTextBox.TabIndex = 20;
+            this.immediateLTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // immediateHTextBox
             // 
             this.immediateHTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.immediateHTextBox.Location = new System.Drawing.Point(203, 219);
+            this.immediateHTextBox.Location = new System.Drawing.Point(184, 219);
             this.immediateHTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.immediateHTextBox.Multiline = true;
             this.immediateHTextBox.Name = "immediateHTextBox";
             this.immediateHTextBox.ReadOnly = true;
-            this.immediateHTextBox.Size = new System.Drawing.Size(100, 39);
+            this.immediateHTextBox.Size = new System.Drawing.Size(117, 39);
             this.immediateHTextBox.TabIndex = 19;
+            this.immediateHTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel11
             // 

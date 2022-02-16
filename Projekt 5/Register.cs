@@ -11,7 +11,6 @@ namespace Projekt_5
         public int[] low = new int[8];
         public int[] high = new int[8];
         public int[] wholeRegister = new int[16];
-        public static int cf = 0;
         public void getWholeRegister()
         {
             for(int i = 0; i < 8; i++)
@@ -46,8 +45,6 @@ namespace Projekt_5
             }
             register1.wholeRegister = temp;
             register1.getLowAndHighFromWholeRegister();
-            if (carry[register1.wholeRegister.Length - 1] == 1)
-                cf = 1;
         }
         public static void sub(Register register1, Register register2) //odejmuje register2 od register1, wynik przechowuje w register1
         {
@@ -64,7 +61,6 @@ namespace Projekt_5
             }
             register1.wholeRegister = temp;
             register1.getLowAndHighFromWholeRegister();
-            //TODO - dodac flage CF jezeli odejmujemy liczbe mniejsza od wiekszej
         }
 
         public void resetRegister()
@@ -73,6 +69,5 @@ namespace Projekt_5
                 wholeRegister[i] = 0;
             getLowAndHighFromWholeRegister();
         }
-
     }
 }

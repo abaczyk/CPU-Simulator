@@ -11,7 +11,6 @@ namespace Projekt_5
         {
             InitializeComponent();
         }
-
         private void registerButton_Click(object sender, EventArgs e)
         {
             Button registerButton = (Button)sender;
@@ -103,33 +102,9 @@ namespace Projekt_5
             {
                 Register.sub(getRegisterNameFromComboBox(operand1ComboBox), getRegisterNameFromComboBox(operand2ComboBox));
             }
-            getTextBoxAfterCommand();
-            cfLabel.Text = "CF = " + Register.cf.ToString();
-            if (cfLabel.Text == "CF = 1")
-                cfLabel.ForeColor = Color.Red;
-            else
-                cfLabel.ForeColor = DefaultBackColor;
+            getTextBoxAfterCommand(getRegisterNameFromComboBox(operand1ComboBox));
         }
 
-        private void getTextBoxAfterCommand()
-        {
-            if (operand1ComboBox.SelectedItem.ToString() == "AX")
-            {
-                getLowAndHighTextBox(ahTextBox, alTextBox);
-            }
-            else if (operand1ComboBox.SelectedItem.ToString() == "BX")
-            {
-                getLowAndHighTextBox(bhTextBox, blTextBox);
-            }
-            else if (operand1ComboBox.SelectedItem.ToString() == "CX")
-            {
-                getLowAndHighTextBox(chTextBox, clTextBox);
-            }
-            else if (operand1ComboBox.SelectedItem.ToString() == "DX")
-            {
-                getLowAndHighTextBox(dhTextBox, dlTextBox);
-            }
-        }
         private void getTextBoxAfterCommand(Register register)
         {
             if (register == ax)
@@ -176,11 +151,37 @@ namespace Projekt_5
 
         private void doStepButton_Click(object sender, EventArgs e)
         {
-            
+            List<string> commands = new List<string>();
+            List<string> operand1 = new List<string>();
+            List<string> operand2 = new List<string>();
+            string[] parts;
+            string[] line = commandsTextBox.Text.Split(Environment.NewLine).Where(val => val != "").ToArray();
+                parts = line[currentLineNumber].Split(" ");
+                commands.Add(parts[1]);
+                if (commands[0].Contains("sub"))
+                {
+                    operand1.Add(parts[3]);
+                    operand2.Add(parts[2]);
+                }
+                else
+                    operand1.Add(parts[2]);
+                operand2.Add(parts[3]);
+
+                if (commands[0].ToLower().Contains("mov"))
+                    Register.mov(getRegisterFromParts(operand1[0]), getRegisterFromParts(operand2[0]));
+
+                else if (commands[0].ToLower().Contains("add"))
+                    Register.add(getRegisterFromParts(operand1[0]), getRegisterFromParts(operand2[0]));
+                else
+                    Register.sub(getRegisterFromParts(operand1[0]), getRegisterFromParts(operand2[0]));
+                getTextBoxAfterCommand(getRegisterFromParts(operand1[0]));
+            currentLineLabel.Visible = true;
+            currentLineLabel.Text = "Aktualnie wykonywany numer rozkazu\nz listy rozkazów: " + (currentLineNumber + 1).ToString();
+            if((currentLineNumber + 1) < line.Length)
+                currentLineNumber++;
         }
         private void executeProgram_Click(object sender, EventArgs e)
         {
-            
             List<string> commands = new List<string>();
             List<string> operand1 = new List<string>();
             List<string> operand2 = new List<string>();
